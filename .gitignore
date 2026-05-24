@@ -1,0 +1,13 @@
+# Data files - too large for GitHub
+data/
+
+# Environment variables - contains passwords, never share this
+.env
+
+# Python cache files - auto-generated, not needed
+__pycache__/
+*.pyc
+.DS_Store
+
+# Virtual environment
+venv/
