@@ -113,18 +113,4 @@ python3 src/features/feature_engineering.py
 python3 src/models/train_model.py
 streamlit run src/dashboard/dashboard.py
 ```
-
-## Project 
-da-biotech-predictor/
-├── src/
-│   ├── ingest/          # Data collection from each source
-│   ├── processing/      # Merging all datasets together
-│   ├── features/        # Feature engineering and scaling
-│   ├── models/          # Model training and evaluation
-│   └── dashboard/       # Streamlit web app
-├── data/
-│   ├── raw/             # Downloaded source data
-│   └── processed/       # Cleaned and model ready data
-└── requirements.txt
-
 Built as a portfolio project by a Data Science student at UCSD.
