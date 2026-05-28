@@ -1,7 +1,14 @@
 """
-    The FDA publishes every drug approval decision on their free API.
-    This script downloads those decisions and saves them as a CSV file.
-    Think of it like automatically copying a government spreadsheet to your computer.
+fda_ingest.py — Download branded drug approval AND rejection decisions from the FDA.
+
+We target NDA and BLA applications only (branded drugs, not generics).
+We collect both approvals (AP) and rejections (CRL - Complete Response Letter).
+
+    AP  = Approved
+    CRL = Complete Response Letter (FDA rejection)
+
+Including rejections doubles our dataset and makes the model more realistic —
+it has to predict both stock crashes (rejections) and rallies (approvals).
 """
 
 import requests
@@ -10,55 +17,68 @@ import time
 from loguru import logger
 from pathlib import Path
 
-OUTPUT_PATH = Path("data/raw/fda_approvals.csv")
-FDA_URL = "https://api.fda.gov/drug/drugsfda.json"
+
+output_file = Path("data/raw/fda_approvals.csv")
+fda_api_url = "https://api.fda.gov/drug/drugsfda.json"
 
 
-def fetch_approvals(pages: int = 5) -> pd.DataFrame:
+def fetch_decisions(pages: int = 20):
     """
-    Download drug approval records from the FDA API.
+    Download both approval and rejection decisions for branded drugs.
     """
     all_records = []
 
-    for page in range(pages):
-        skip = page * 100
+    # We collect both AP (approved) and CRL (rejected)
+    decision_types = ["AP", "CR"]
 
-        params = {
-            "search": "submissions.submission_status:AP",
-            "limit": 100,
-            "skip": skip,
-        }
+    for decision in decision_types:
+        logger.info(f"\nFetching {decision} decisions...")
 
-        logger.info(f"Downloading page {page + 1} of {pages}...")
+        for page in range(pages):
+            skip = page * 100
 
-        response = requests.get(FDA_URL, params=params, timeout=30)
+            params = {
+                "search": f"submissions.submission_status:{decision}",
+                "limit": 100,
+                "skip": skip,
+            }
 
-        if response.status_code != 200:
-            logger.warning(f"API returned error {response.status_code}. Stopping.")
-            break
+            logger.info(f"  Page {page + 1} of {pages}...")
 
-        results = response.json().get("results", [])
+            response = requests.get(fda_api_url, params=params, timeout=30)
 
-        if not results:
-            logger.info("No more results.")
-            break
+            if response.status_code != 200:
+                logger.warning(f"  API returned {response.status_code}. Moving on.")
+                break
 
-        for drug in results:
-            record = parse_drug(drug)
-            if record:
-                all_records.append(record)
+            results = response.json().get("results", [])
 
-        time.sleep(0.3)
+            if not results:
+                logger.info("  No more results.")
+                break
 
-    logger.info(f"Downloaded {len(all_records)} records total")
+            for drug in results:
+                record = parse_drug(drug, decision)
+                if record:
+                    all_records.append(record)
+
+            time.sleep(0.3)
+
+    logger.info(f"\nTotal records downloaded: {len(all_records)}")
     return pd.DataFrame(all_records)
 
 
-def parse_drug(drug):
+def parse_drug(drug, decision_type):
     """
-    Pull out the fields we care about from one FDA record.
+    Extract fields we need from one FDA record.
     """
     try:
+        app_number = drug.get("application_number", "")
+
+        # Skip generic drugs — we only want branded NDA and BLA
+        if not (app_number.startswith("NDA") or app_number.startswith("BLA")):
+            return None
+
         products = drug.get("products", [{}])
         first_product = products[0] if products else {}
 
@@ -66,18 +86,19 @@ def parse_drug(drug):
         generic_name = ingredients[0].get("name", "") if ingredients else ""
 
         submissions = drug.get("submissions", [])
-        approval = find_approval(submissions)
+        decision = find_decision(submissions, decision_type)
 
-        if not approval:
+        if not decision:
             return None
 
         return {
-            "application_number": drug.get("application_number", ""),
+            "application_number": app_number,
             "sponsor_name": drug.get("sponsor_name", ""),
             "brand_name": first_product.get("brand_name", ""),
             "generic_name": generic_name,
-            "approval_date": approval.get("submission_status_date", ""),
-            "is_priority_review": approval.get("review_priority", "STANDARD") != "STANDARD",
+            "approval_date": decision.get("submission_status_date", ""),
+            "decision": decision_type,  # AP or CRL
+            "is_priority_review": decision.get("review_priority", "STANDARD") != "STANDARD",
         }
 
     except Exception as e:
@@ -85,30 +106,43 @@ def parse_drug(drug):
         return None
 
 
-def find_approval(submissions):
-    """Find the submission where the FDA said 'approved'."""
+def find_decision(submissions, decision_type):
+    """Find the submission matching the decision type (AP or CRL)."""
     for s in submissions:
-        if s.get("submission_status") == "AP":
+        if s.get("submission_status") == decision_type:
             return s
     return None
 
 
 def run():
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
-    df = fetch_approvals(pages=5)
+    df = fetch_decisions(pages=20)
 
     if df.empty:
-        logger.error("No data downloaded. Check your internet connection.")
+        logger.error("No data downloaded.")
         return
 
-    df["approval_date"] = pd.to_datetime(df["approval_date"], format="%Y%m%d", errors="coerce")
+    # Clean up dates
+    df["approval_date"] = pd.to_datetime(
+        df["approval_date"], format="%Y%m%d", errors="coerce"
+    )
     df = df.dropna(subset=["approval_date"])
+
+    # Only keep post-2010
+    df = df[df["approval_date"].dt.year >= 2010]
+
     df = df.sort_values("approval_date", ascending=False)
+    df = df.drop_duplicates(subset=["application_number", "decision"])
 
-    df.to_csv(OUTPUT_PATH, index=False)
-    logger.success(f"Saved {len(df)} records to {OUTPUT_PATH}")
+    # Summary
+    approvals = (df["decision"] == "AP").sum()
+    rejections = (df["decision"] == "CRL").sum()
+    logger.success(f"Saved {len(df)} total decisions")
+    logger.info(f"  Approvals (AP):  {approvals}")
+    logger.info(f"  Rejections (CRL): {rejections}")
 
+    df.to_csv(output_file, index=False)
     print(df.head(10).to_string())
 
 
