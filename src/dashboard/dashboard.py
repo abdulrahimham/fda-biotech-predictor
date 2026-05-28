@@ -66,7 +66,7 @@ FEATURE_DISPLAY_NAMES = {
 
 
 # ── Header ─────────────────────────────────────────────────────────────────────
-st.title("💊 FDA Biotech Stock Predictor")
+st.title("FDA Biotech Stock Predictor")
 st.markdown("""
 When the FDA approves or rejects a drug, the company's stock can move 
 20 to 30% in a single day. This project builds a machine learning model 
