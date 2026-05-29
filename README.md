@@ -1,5 +1,7 @@
 # FDA Biotech Stock Predictor
 
+**Live Demo:** https://fda-biotech-predictor.streamlit.app
+
 A machine learning project that predicts whether a drug company's stock 
 will go up or down after the US government approves or rejects their drug.
 
