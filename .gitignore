@@ -1,6 +1,3 @@
-# Data files - too large for GitHub
-data/
-
 # Environment variables - contains passwords, never share this
 .env
 

@@ -1,0 +1,166 @@
+application_number,company_name,approval_date,filing_found,filing_text
+BLA761106,Genentech Inc,2026-05-18,False,
+NDA219878,Astrazeneca Pharms,2026-05-15,False,
+NDA215192,Akebia,2026-04-01,True,"8-K filing found for Akebia, filed on 2026-04-01"
+NDA219164,Ascendis,2026-02-27,False,
+NDA219873,Eton,2026-02-25,True,"8-K filing found for Eton, filed on 2026-03-02"
+NDA213535,Genentech Inc,2026-02-10,True,"8-K filing found for Genentech Inc, filed on 2026-02-12"
+NDA017854,Ani Pharms,2026-02-09,False,
+NDA218171,Xcovery,2026-01-08,False,
+BLA761152,Omeros Corp,2025-12-23,False,
+NDA219884,Acadia Pharms Inc,2025-12-11,False,
+BLA761100,Samsung Bioepis Co Ltd,2025-12-05,False,
+NDA218160,Eli Lilly And Co,2025-11-20,False,
+NDA218637,Kamat,2025-11-13,False,
+NDA219910,Glaukos,2025-10-17,False,
+NDA219868,Azurity,2025-10-16,False,
+NDA217294,Sq Innovation,2025-10-07,False,
+NDA019079,Harrow Eye,2025-09-23,False,
+NDA022437,Verity,2025-09-23,True,"8-K filing found for Verity, filed on 2025-09-22"
+NDA217307,Thea Pharma,2025-09-09,False,
+NDA217700,Day One Biopharms,2025-08-27,False,
+NDA218643,Thea Pharma,2025-08-15,False,
+NDA219876,Chimerix,2025-08-06,False,
+NDA019531,B Braun,2025-07-24,False,
+BLA761107,Novimmune S.A.,2025-06-27,False,
+NDA019127,Xttrium,2025-05-27,False,
+NDA216873,Glaxosmithkline,2025-04-18,True,"8-K filing found for Glaxosmithkline, filed on 2025-04-17"
+NDA218158,Harrow Eye,2025-04-07,False,
+NDA219208,Novartis,2025-04-02,True,"8-K filing found for Novartis, filed on 2025-04-01"
+NDA218647,Prm Pharma,2025-03-17,False,
+NDA203168,Bausch And Lomb,2025-02-18,False,
+NDA209299,Rigel Pharms,2025-02-04,False,
+NDA219209,Vertex Pharms Inc,2025-01-30,False,
+BLA761150,Macrogenics Inc,2025-01-15,False,
+NDA204353,Janssen Pharms,2024-12-18,False,
+NDA202106,B Braun Medical,2024-12-03,False,
+NDA210661,Avyxa Holdings,2024-12-02,False,
+NDA020998,Upjohn,2024-11-21,False,
+BLA761113,Sanofi Aventis Us,2024-10-25,False,
+NDA214770,Msd Merck Co,2024-10-25,False,
+NDA021366,Astrazeneca,2024-07-31,True,"8-K filing found for Astrazeneca, filed on 2024-08-07"
+NDA217779,Geron,2024-06-06,True,"8-K filing found for Geron, filed on 2024-06-07"
+NDA213498,Vanda Pharms Inc,2024-06-05,False,
+NDA022427,Abbvie,2024-05-24,True,"8-K filing found for Abbvie, filed on 2024-05-23"
+NDA216482,Azurity,2024-05-01,False,
+NDA211675,Abbvie,2024-04-26,True,"8-K filing found for Abbvie, filed on 2024-04-26"
+NDA216483,Alembic Therap,2024-04-24,False,
+NDA021321,Vantive Us Hlthcare,2024-04-22,False,
+NDA211994,Viiv Hlthcare,2024-04-18,False,
+NDA021316,Azurity,2024-03-14,True,"8-K filing found for Azurity, filed on 2024-03-14"
+NDA202834,Catalyst Pharms,2023-10-26,False,
+NDA022425,Sanofi Aventis Us,2023-10-23,False,
+BLA761151,Ucb Inc,2023-10-17,True,"8-K filing found for Ucb Inc, filed on 2023-10-10"
+NDA215985,Arcutis,2023-10-05,False,
+NDA209637,Novo,2023-09-22,True,"8-K filing found for Novo, filed on 2023-09-19"
+NDA212725,Genentech Inc,2023-08-31,True,"8-K filing found for Genentech Inc, filed on 2023-08-29"
+NDA217722,Harm Reduction Therp,2023-07-28,False,
+BLA125103,Biovitrum Ab,2023-07-27,False,
+NDA205879,Janssen Pharms,2023-07-05,False,
+NDA210303,Cipla Usa,2023-02-10,False,
+NDA203993,Lundbeck Pharms Llc,2023-01-13,False,
+NDA210361,Journey,2022-10-28,True,"8-K filing found for Journey, filed on 2022-11-03"
+NDA206255,Galderma Labs Lp,2022-10-14,False,
+NDA209988,Scpharmaceuticals,2022-10-07,True,"8-K filing found for Scpharmaceuticals, filed on 2022-10-14"
+NDA206333,Abbvie,2022-10-05,True,"8-K filing found for Abbvie, filed on 2022-10-05"
+BLA761149,Genentech,2022-09-14,True,"8-K filing found for Genentech, filed on 2022-09-09"
+BLA125164,Hoffman-La Roche,2022-08-30,False,
+NDA213953,Marius,2022-07-27,False,
+NDA214324,United Therap,2022-05-23,False,
+NDA212018,Janssen Biotech,2022-04-27,True,"8-K filing found for Janssen Biotech, filed on 2022-05-04"
+NDA212728,Pfizer,2022-03-31,True,"8-K filing found for Pfizer, filed on 2022-03-29"
+NDA213478,Nobelpharma,2022-03-22,False,
+NDA200740,Leadiant Biosci Inc,2022-02-25,False,
+BLA761112,Ablynx Nv,2022-02-23,False,
+NDA213491,Horizon,2022-02-11,True,"8-K filing found for Horizon, filed on 2022-02-11"
+NDA210308,Sun Pharm,2022-01-28,False,
+NDA206334,Melinta Therap,2022-01-14,False,
+NDA212379,Journey,2022-01-13,True,"8-K filing found for Journey, filed on 2022-01-13"
+NDA211349,Astellas,2022-01-12,True,"8-K filing found for Astellas, filed on 2022-01-13"
+BLA761108,Alexion Pharm,2022-01-07,False,
+BLA761103,Pfizer Inc,2021-11-15,True,"8-K filing found for Pfizer Inc, filed on 2021-11-19"
+NDA215133,Almatica,2021-10-04,False,
+NDA211340,Azurity,2021-09-13,False,
+NDA213895,Hikma,2021-08-26,False,
+BLA761109,Eli Lilly And Co,2021-08-13,False,
+NDA022028,Sandoz,2021-07-16,True,"8-K filing found for Sandoz, filed on 2021-07-09"
+NDA213536,Dr Reddys Labs Sa,2021-06-14,False,
+NDA215110,Abbvie,2021-06-10,True,"8-K filing found for Abbvie, filed on 2021-06-09"
+NDA020776,Pfizer,2021-04-28,True,"8-K filing found for Pfizer, filed on 2021-05-04"
+NDA019201,Novartis,2021-04-28,True,"8-K filing found for Novartis, filed on 2021-04-29"
+BLA761105,Abbvie Inc,2021-04-26,True,"8-K filing found for Abbvie Inc, filed on 2021-04-30"
+BLA761115,Immunomedics Inc,2021-04-07,False,
+NDA021667,Emmaus Medcl,2021-03-31,False,
+NDA205525,Wellhouse Pharma,2021-03-22,False,
+NDA211673,Hong Kong,2021-03-16,True,"8-K filing found for Hong Kong, filed on 2021-03-12"
+BLA761099,Pfizer Inc,2021-02-09,True,"8-K filing found for Pfizer Inc, filed on 2021-02-02"
+NDA208944,Supernus Pharms,2021-02-01,False,
+NDA200738,Bausch And Lomb,2020-12-08,False,
+NDA214701,Blueprint Medicines,2020-12-01,True,"8-K filing found for Blueprint Medicines, filed on 2020-12-01"
+NDA208587,Emmaus Medcl,2020-10-29,False,
+NDA206679,Salerno Pharms,2020-09-25,False,
+BLA761104,Innate Pharma,2020-08-20,False,
+BLA761102,Servier Pharma Llc,2020-06-24,False,
+BLA761111,Hospira Inc,2020-06-10,False,
+NDA209310,Intersect Ent Inc,2020-04-28,False,
+NDA210656,Pfizer,2020-03-19,True,"8-K filing found for Pfizer, filed on 2020-03-17"
+NDA206256,Acrotech Biopharma,2020-01-08,False,
+NDA200732,Pharmobedient,2019-12-27,False,
+BLA125117,Biomarin,2019-12-17,True,"8-K filing found for Biomarin, filed on 2019-12-19"
+NDA022038,Vertical Pharms,2019-12-12,False,
+BLA208583,Novo,2019-11-15,True,"8-K filing found for Novo, filed on 2019-11-18"
+NDA211672,Hong Kong,2019-08-19,True,"8-K filing found for Hong Kong, filed on 2019-08-26"
+NDA212726,Genentech Inc,2019-08-15,True,"8-K filing found for Genentech Inc, filed on 2019-08-14"
+NDA022044,Msd Sub Merck,2019-08-12,False,
+NDA211996,Foldrx Pharms,2019-05-03,False,
+NDA210660,Exela Pharma,2019-04-16,False,
+NDA212020,Exela Pharma,2019-04-15,False,
+NDA209296,Heron Theraps Inc,2019-02-26,False,
+NDA208945,Lnhc,2019-02-04,False,
+NDA020121,Haleon Us Holdings,2019-01-07,False,
+NDA018225,Validus Pharms,2018-08-08,False,
+NDA208627,Siga Technologies,2018-07-13,False,
+BLA125084,Imclone,2018-06-05,False,
+NDA208255,Mylan,2018-02-05,True,"8-K filing found for Mylan, filed on 2018-02-05"
+NDA022426,Takeda Pharms Usa,2017-12-21,False,
+NDA208254,Alcon Labs Inc,2017-12-18,False,
+NDA209305,Aclaris,2017-12-14,True,"8-K filing found for Aclaris, filed on 2017-12-15"
+NDA208582,Altaire Pharms Inc,2017-12-14,False,
+NDA209347,Exela Pharma,2017-12-05,False,
+NDA208624,Abbvie,2017-11-09,True,"8-K filing found for Abbvie, filed on 2017-11-07"
+NDA208215,Gilead Sciences Inc,2017-09-28,True,"8-K filing found for Gilead Sciences Inc, filed on 2017-09-28"
+NDA021367,Millicent Mfg Pr,2017-08-08,False,
+NDA205060,Astrazeneca,2017-03-09,True,"8-K filing found for Astrazeneca, filed on 2017-03-02"
+NDA022428,Harrow Eye,2017-02-17,False,
+NDA208943,Ph Health,2017-01-27,False,
+NDA209989,Matheson Tri-Gas Inc,2017-01-09,False,
+NDA201517,Chartwell Molecular,2016-12-16,False,
+NDA208984,Viiv Hlthcare,2016-11-04,False,
+NDA202107,Corcept Therap,2016-10-25,False,
+BLA020986,Novo Nordisk Inc,2016-10-07,False,
+NDA203952,Abbvie,2016-09-15,False,
+NDA202833,Leo Labs,2016-09-13,False,
+NDA205065,Biomarin Pharm,2016-08-09,False,
+NDA021314,Meridian Bioscience,2016-07-25,False,
+NDA022485,Plano Pharms,2016-05-26,False,
+NDA022430,Amring Pharms,2016-05-23,False,
+NDA020746,Kenvue Brands,2016-04-22,False,
+BLA125422,"Thrombogenics, Inc",2016-03-27,False,
+BLA125409,Genentech,2016-03-22,True,"8-K filing found for Genentech, filed on 2016-03-29"
+NDA202123,Gilead Sciences Inc,2016-03-09,True,"8-K filing found for Gilead Sciences Inc, filed on 2016-03-11"
+NDA202813,Teva Branded Pharm,2016-02-29,False,
+NDA021323,Abbvie,2016-01-28,True,"8-K filing found for Abbvie, filed on 2016-01-29"
+NDA022421,Boehringer Ingelheim,2016-01-14,False,
+NDA205934,Shilpa,2015-12-22,False,
+NDA021330,Haleon Us Holdings,2015-09-30,False,
+NDA207070,Boehringer Ingelheim,2015-09-15,True,"8-K filing found for Boehringer Ingelheim, filed on 2015-09-17"
+NDA207071,Leo Pharma As,2015-07-29,False,
+NDA022083,Sandoz,2015-06-24,True,"8-K filing found for Sandoz, filed on 2015-06-19"
+BLA021665,Amphastar Pharm,2015-06-19,False,
+NDA205122,Upsher Smith Labs,2015-06-16,False,
+NDA022424,Chartwell Rx,2015-05-14,False,
+NDA006530,Pharmobedient,2015-04-24,False,
+NDA021332,Astrazeneca Ab,2015-03-20,False,
+NDA204708,Galderma Labs Lp,2015-03-03,False,
+NDA203567,Bausch,2015-02-27,True,"8-K filing found for Bausch, filed on 2015-02-23"
+NDA206276,Alcon Labs Inc,2015-01-30,False,
